@@ -22,9 +22,14 @@ resources:
 extends:
   template: template-pipeline.yml@templates    
   parameters:    
-    packagename: lime-python-test
+    packagename: lime-python
     type: python
     to: pypi
+    pythonTest:
+    - python -m pip install --upgrade pip
+    - python -m pip install pipenv
+    - pipenv lock -r > requirements.txt
+    - pip install -r requirements.txt
     pythonCmds:
     - python -m pip install --upgrade pip
     - python -m pip install pipenv
