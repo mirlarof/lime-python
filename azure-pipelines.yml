@@ -22,7 +22,7 @@ resources:
 extends:
   template: template-pipeline.yml@templates    
   parameters:    
-    packagename: lime-python
+    packagename: lime-python-test
     type: python
     to: pypi
     pythonCmds:
